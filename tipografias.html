@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tipografías — opciones</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;500&family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Corben:wght@400;700&family=Cherry+Bomb+One&family=Bagel+Fat+One&family=Shrikhand&family=DynaPuff:wght@400..700&display=swap" rel="stylesheet" />
+  <link href="https://api.fontshare.com/v2/css?f[]=bonny@400,500,700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --black: #040509; --navy: #0b1d4a; --navy-deep: #07112b;
+      --bone: #efe8da; --paper: #f5f1e9; --ink: #16171b;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--black); color: #f4f6fb; font-family: "Manrope", sans-serif; padding: 48px clamp(16px, 4vw, 48px) 96px; }
+    header { max-width: 1200px; margin: 0 auto 48px; }
+    header h1 { font-size: 22px; font-weight: 500; }
+    header p { margin-top: 8px; color: rgba(244,246,251,.55); font-size: 15px; max-width: 70ch; line-height: 1.6; }
+
+    .opt { max-width: 1200px; margin: 0 auto 64px; }
+    .meta { display: flex; flex-wrap: wrap; gap: 8px 20px; align-items: baseline; margin-bottom: 14px; }
+    .meta b { font-size: 20px; font-weight: 500; }
+    .meta span { font-size: 14px; color: rgba(244,246,251,.55); }
+
+    .hero {
+      display: flex; align-items: center; justify-content: center; gap: .4em;
+      min-height: 320px; padding: 40px 24px;
+      background: radial-gradient(60% 70% at 50% 50%, var(--navy) 0%, var(--navy-deep) 50%, var(--black) 100%);
+      border: 1px solid rgba(244,246,251,.1); border-bottom: 0;
+      overflow: hidden;
+    }
+    .name {
+      display: flex; gap: .24em; white-space: nowrap; line-height: 1;
+      font-size: clamp(40px, 7vw, 104px); color: var(--bone);
+      font-family: var(--d); font-weight: var(--dw, 400); letter-spacing: var(--dt, -0.02em);
+      font-variation-settings: var(--dv, normal);
+    }
+    .name .last { font-family: var(--d2, var(--d)); font-style: var(--d2s, italic); font-weight: var(--d2w, var(--dw, 400)); font-variation-settings: var(--d2v, var(--dv, normal)); }
+    .stars { position: relative; width: 1.9em; height: 1.2em; font-size: clamp(40px, 7vw, 104px); flex: none; }
+    .stars svg { position: absolute; }
+    .stars .s1 { width: .95em; left: 0; top: .1em; transform: rotate(-10deg); }
+    .stars .s2 { width: .58em; left: 1.05em; top: -.25em; transform: rotate(16deg); }
+    .stars .s3 { width: .4em; left: 1em; top: .7em; transform: rotate(-4deg); }
+
+    .paper { background: var(--paper); color: var(--ink); padding: 40px clamp(20px, 4vw, 56px); display: grid; grid-template-columns: 1fr 2.4fr; gap: 32px; }
+    .kicker { font-family: var(--b); font-size: 12px; letter-spacing: .22em; text-transform: uppercase; color: rgba(22,23,27,.58); padding-top: .9em; }
+    .paper h2 { font-family: var(--d); font-weight: var(--dw, 400); letter-spacing: var(--dt, -0.02em); font-variation-settings: var(--dv, normal); font-size: clamp(32px, 4.4vw, 60px); line-height: 1.05; }
+    .paper h2 em { font-family: var(--d2, var(--d)); font-style: var(--d2s, italic); font-weight: var(--d2w, var(--dw, 400)); font-variation-settings: var(--d2v, var(--dv, normal)); }
+    .paper p { font-family: var(--b); margin-top: 20px; max-width: 50ch; font-size: 17px; line-height: 1.65; color: rgba(22,23,27,.62); }
+    @media (max-width: 700px) {
+      .hero { flex-direction: column; gap: 16px; }
+      .paper { grid-template-columns: 1fr; gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Opciones de tipografía</h1>
+    <p>Variantes en la onda de la F (gorditas, blandas, retro). La primera es la F como referencia; todas llevan Figtree para el texto. Decime la letra que más les guste.</p>
+  </header>
+
+  <div id="list"></div>
+
+  <script src="star.js"></script>
+  <script>
+    // Todas con Figtree de texto, para comparar solo la display.
+    const B = '"Figtree", sans-serif';
+    const OPTIONS = [
+      { id: "F", title: "Caprasimo", note: "La que les gustó, como referencia. No tiene itálica.",
+        vars: { "--d": '"Caprasimo", serif', "--dt": "-0.01em", "--d2s": "normal", "--b": B } },
+      { id: "G", title: "Fraunces Black Soft", note: "La misma onda Cooper gordita y blanda, pero variable y con itálica real para \"Paes\". La más flexible.",
+        vars: { "--d": '"Fraunces", serif', "--dw": 900, "--dt": "-0.02em", "--dv": '"SOFT" 100, "WONK" 1, "opsz" 144', "--d2v": '"SOFT" 100, "WONK" 1, "opsz" 144', "--b": B } },
+      { id: "H", title: "Bonny", note: "Serif retro suave de Fontshare: redondeada como Caprasimo pero un poco más fina y elegante.",
+        vars: { "--d": '"Bonny", serif', "--dw": 700, "--dt": "-0.02em", "--d2s": "normal", "--b": B } },
+      { id: "I", title: "Corben", note: "Retro años 70 con curvas redondas, más liviana y legible en títulos largos.",
+        vars: { "--d": '"Corben", serif', "--dw": 700, "--dt": "-0.02em", "--d2s": "normal", "--b": B } },
+      { id: "J", title: "Cherry Bomb One", note: "Redonda y tierna, estilo pop japonés: guiño directo a Ghibli y Kurosuke.",
+        vars: { "--d": '"Cherry Bomb One", sans-serif', "--dt": "0", "--d2s": "normal", "--b": B } },
+      { id: "K", title: "Bagel Fat One", note: "Gordísima y redonda, tipo sticker. La más divertida.",
+        vars: { "--d": '"Bagel Fat One", sans-serif', "--dt": "0", "--d2s": "normal", "--b": B } },
+      { id: "L", title: "Shrikhand", note: "Itálica retro con mucho movimiento, onda cartel de los 70.",
+        vars: { "--d": '"Shrikhand", serif', "--dt": "0", "--d2s": "normal", "--b": B } },
+      { id: "M", title: "DynaPuff", note: "Letras infladas, como de caricatura. Muy amigable.",
+        vars: { "--d": '"DynaPuff", sans-serif', "--dw": 600, "--dt": "-0.01em", "--d2s": "normal", "--b": B } },
+    ];
+
+    const stars = `<div class="stars" aria-hidden="true">
+      ${makeStar("#e4e7ee").replace("<svg", '<svg class="s1"')}
+      ${makeStar("#b4b9c6").replace("<svg", '<svg class="s2"')}
+      ${makeStar("#8a90a0").replace("<svg", '<svg class="s3"')}
+    </div>`;
+
+    document.getElementById("list").innerHTML = OPTIONS.map((o) => `
+      <section class="opt" style='${Object.entries(o.vars).map(([k, v]) => `${k}:${v}`).join(";")}'>
+        <div class="meta"><b>${o.id} · ${o.title}</b><span>${o.note}</span></div>
+        <div class="hero">
+          <div class="name"><span>Giovanna</span><span class="last">Paes</span></div>
+          ${stars}
+        </div>
+        <div class="paper">
+          <p class="kicker">Sobre mim</p>
+          <div>
+            <h2>Olá, eu sou a <em>Giovanna</em>.</h2>
+            <p>Aqui entra uma apresentação curta: o que eu faço, como trabalho e o que me move. Duas ou três linhas bastam para quem chega saber com quem está falando.</p>
+          </div>
+        </div>
+      </section>`).join("");
+  </script>
+</body>
+</html>

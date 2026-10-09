@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Giovanna Paes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Figtree:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <canvas class="sky" id="sky" aria-hidden="true"></canvas>
+  <nav class="nav" id="nav" aria-label="Principal">
+    <a class="nav-mark" href="#hero" aria-label="Giovanna Paes, início">
+      <svg viewBox="0 0 200 130" aria-hidden="true">
+        <defs>
+          <polygon id="logo-star" points="50.0,17.0 61.2,37.6 84.2,41.9 68.1,58.9 71.2,82.1 50.0,72.0 28.8,82.1 31.9,58.9 15.8,41.9 38.8,37.6"
+            stroke-width="13" stroke-linejoin="round" />
+        </defs>
+        <g class="ls ls-1"><use href="#logo-star" transform="translate(0 24) rotate(-10 50 50)" /></g>
+        <g class="ls ls-2"><use href="#logo-star" transform="translate(112 0) scale(0.6) rotate(16 50 50)" /></g>
+        <g class="ls ls-3"><use href="#logo-star" transform="translate(108 78) scale(0.44) rotate(-4 50 50)" /></g>
+      </svg>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#sobre-mim" data-section="sobre-mim">Sobre mim</a></li>
+      <li><a href="#trabalhos" data-section="trabalhos">Trabalhos</a></li>
+      <li><a href="#stack" data-section="stack">Stack</a></li>
+      <li><a href="#contato" data-section="contato">Contato</a></li>
+    </ul>
+    <a class="nav-cta" href="mailto:giovanna05paes@gmail.com">Fale comigo</a>
+  </nav>
+
+  <main>
+    <section class="hero" id="hero">
+      <canvas class="trail" id="trail" aria-hidden="true"></canvas>
+      <div class="stars" id="stars" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <h1 class="name" id="name">
+          <span class="word" id="first">Giovanna</span>
+          <span class="word" id="last">Paes</span>
+        </h1>
+        <p class="hero-role">Estudante de Engenharia da Computação</p>
+        <p class="hero-sub">Atualmente desenvolvendo aplicações com Node.js e React.</p>
+      </div>
+
+    </section>
+
+      <section class="about reveal" id="sobre-mim">
+        <div class="about-text">
+          <h2>Olá, eu sou a <em>Giovanna</em>.</h2>
+          <p>
+            Sou estudante de Engenharia da Computação e estou em constante evolução para me tornar
+            uma profissional completa na área de tecnologia. Tenho vivência prática com
+            C#, Python, SQL e JavaScript.
+          </p>
+          <p>
+            Tenho muita disposição para aprender, colaborar e crescer junto com a equipe.
+          </p>
+        </div>
+      </section>
+
+      <section class="work" id="trabalhos">
+        <div class="work-head reveal">
+          <h2>Projetos</h2>
+          <p>Direto do meu <a href="https://github.com/gigi-paes" target="_blank" rel="noopener">GitHub</a>. Escolha um para ver os detalhes.</p>
+        </div>
+        <!-- galería: la llena gallery.js con los repos de github.com/gigi-paes -->
+        <div class="gallery reveal" id="gallery">
+          <ul class="gallery-list" id="gallery-list" role="listbox" aria-label="Projetos"></ul>
+          <article class="gallery-view" id="gallery-view" aria-live="polite">
+            <div class="gallery-content" id="gallery-content">
+              <p class="gallery-loading">Carregando projetos…</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+    <section class="stack" id="stack">
+      <div class="stack-text reveal">
+        <h2>Com o que eu trabalho</h2>
+        <p>
+          Tenho interesse em performance, UX e organização de código.
+          Passe o mouse ou toque nas tecnologias.
+        </p>
+      </div>
+      <div class="orbit" id="orbit">
+        <div class="orbit-soot reveal" data-soot="stack"></div>
+        <ul class="orbit-icons" id="orbit-icons" aria-label="Tecnologias"></ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="contato">
+    <div class="footer-inner">
+      <!-- Kurosuke con patitas: se puede agarrar y arrastrar (buddy.js) -->
+      <div class="buddy-zone" id="buddy-zone">
+        <div class="buddy" id="buddy" data-soot="buddy" data-legs aria-label="Kurosuke, arraste-me" role="img"></div>
+        <div class="buddy-shadow" id="buddy-shadow" aria-hidden="true"></div>
+        <div class="buddy-bubble" id="buddy-bubble" aria-live="polite"><span>Me arraste!!!</span></div>
+      </div>
+
+      <!-- estrellas sólidas con la información de contacto -->
+      <div class="info-stars reveal">
+        <div class="info-star is-main" style="--x:0%; --y:6%; --s:44; --r:-9deg; --fill:#efe8da">
+          <svg class="info-star-shape" viewBox="0 0 100 100" aria-hidden="true"><polygon points="50.0,17.0 61.2,37.6 84.2,41.9 68.1,58.9 71.2,82.1 50.0,72.0 28.8,82.1 31.9,58.9 15.8,41.9 38.8,37.6"/></svg>
+          <span class="info-star-content"><strong>Vamos conversar?</strong></span>
+        </div>
+        <a class="info-star" href="mailto:giovanna05paes@gmail.com" style="--x:48%; --y:0%; --s:38; --r:11deg; --fill:#c9cdd6">
+          <svg class="info-star-shape" viewBox="0 0 100 100" aria-hidden="true"><polygon points="50.0,17.0 61.2,37.6 84.2,41.9 68.1,58.9 71.2,82.1 50.0,72.0 28.8,82.1 31.9,58.9 15.8,41.9 38.8,37.6"/></svg>
+          <span class="info-star-content">
+            <svg class="info-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M3 6.5h18v11H3z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="m3.5 7 8.5 6.5L20.5 7"/></svg>
+            <span class="info-text">giovanna05paes<br>@gmail.com</span>
+          </span>
+        </a>
+        <a class="info-star" href="https://www.linkedin.com/in/giovanna-paes-9720b234a/" target="_blank" rel="noopener" style="--x:36%; --y:55%; --s:26; --r:-6deg; --fill:#9aa1b0">
+          <svg class="info-star-shape" viewBox="0 0 100 100" aria-hidden="true"><polygon points="50.0,17.0 61.2,37.6 84.2,41.9 68.1,58.9 71.2,82.1 50.0,72.0 28.8,82.1 31.9,58.9 15.8,41.9 38.8,37.6"/></svg>
+          <span class="info-star-content">
+            <svg class="info-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            <span class="info-text">LinkedIn</span>
+          </span>
+        </a>
+        <a class="info-star" href="https://github.com/gigi-paes" target="_blank" rel="noopener" style="--x:66%; --y:50%; --s:26; --r:14deg; --fill:#c9cdd6">
+          <svg class="info-star-shape" viewBox="0 0 100 100" aria-hidden="true"><polygon points="50.0,17.0 61.2,37.6 84.2,41.9 68.1,58.9 71.2,82.1 50.0,72.0 28.8,82.1 31.9,58.9 15.8,41.9 38.8,37.6"/></svg>
+          <span class="info-star-content">
+            <svg class="info-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.930 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.910 1.23 3.220 0 4.610-2.805 5.625-5.475 5.920.42.36.81 1.096.81 2.220 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+            <span class="info-text">GitHub</span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <svg class="paths" aria-hidden="true" width="0" height="0"></svg>
+
+  <script src="vendor/lenis.min.js"></script>
+  <script src="smooth-scroll.js"></script>
+  <script src="star.js"></script>
+  <script src="soot.js"></script>
+  <script src="stack-icons.js"></script>
+  <script src="stack.js"></script>
+  <script src="work.js"></script>
+  <script src="gallery.js"></script>
+  <script src="sky.js"></script>
+  <script src="buddy.js"></script>
+  <script src="main.js"></script>
+  <script src="nav.js"></script>
+</body>
+</html>
